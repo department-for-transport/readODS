@@ -141,10 +141,10 @@
 
 .type_convert <- function(df, col_types = NULL, verbose = TRUE, na = c("", "NA"), trim_ws = TRUE) {
     if (verbose) {
-        res <- readr::type_convert(df = df, col_types, na = na)
+        res <- readr::type_convert(df = df, col_types, na = na, guess_integer = FALSE)
     } else {
         suppressMessages({
-            res <- readr::type_convert(df = df, col_types, na = na, trim_ws = trim_ws)
+            res <- readr::type_convert(df = df, col_types, na = na, trim_ws = trim_ws, guess_integer = FALSE)
         })
     }
     return(res)
